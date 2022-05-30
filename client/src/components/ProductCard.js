@@ -53,20 +53,21 @@ const ProductCard = () => {
                             <Image src={image_url} height={200} alt="Coffee beans" />
                         </Anchor>
                     </Card.Section>
-                    <Anchor variant="text" href={product_url} target="_blank" rel="noreferrer">
-                        <Group position="apart">
-                            <Text pt="xs" size="sm">{brand}</Text>
-                            <Text pt="xs" size="xs" style={{ lineHeight: 1.5 }}>${price} for {weight}g</Text>
-                        </Group>
-                        <Text style={{ lineHeight: 1 }} weight={500}>{title}</Text>
-                    </Anchor>
-                    {/* <Badge color="pink" variant="light">
-                                On Sale
-                            </Badge> */}
-                    <Text size="sm" style={{ lineHeight: 1.5 }}>{country}</Text>
-                    <Text size="sm" style={{ lineHeight: 1 }}>{process}</Text>
-                    <Text size="sm" style={{ lineHeight: 1.5 }}>{varietyOutput}</Text>
-                    {/* <Text size="xs" style={{ lineHeight: 0.5 }}>{date_added}</Text> */}
+                    <div style={{height: 150}}>
+                        <Anchor variant="text" href={product_url} target="_blank" rel="noreferrer">
+                            <Group position="apart">
+                                <Text pt="xs" size="sm">{brand}</Text>
+                                <Text pt="xs" size="xs" style={{ lineHeight: 1.5 }}>${price} for {weight}g</Text>
+                            </Group>
+                            <Text style={{ lineHeight: 1 }} weight={500}>{title}</Text>
+                        </Anchor>
+                        {/* <Badge color="pink" variant="light">
+                                    On Sale
+                                </Badge> */}
+                        <Text size="sm" style={{ lineHeight: 2 }}>{country}</Text>
+                        <Text size="sm" style={{ lineHeight: 1, marginBottom: '0.25em'}}>{process}</Text>
+                        <Text size="sm" style={{ lineHeight: 1.5 }}>{varietyOutput}</Text>
+                    </div>
                 </Card>
             </div>
         );
