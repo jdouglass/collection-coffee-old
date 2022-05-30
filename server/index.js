@@ -115,11 +115,12 @@ app.post('/products', async (req, res) => {
 // update product
 app.put('/products/item', async (req, res) => {
   try {
-    const result = await db.query('update products set price = $1, weight = $2, sold_out = $3 where product_url = $4 returning *',
+    const result = await db.query('update products set price = $1, weight = $2, sold_out = $3, image_url = $4 where product_url = $5 returning *',
       [
         req.body.price,
         req.body.weight,
         req.body.sold_out,
+        req.body.image_url,
         req.body.product_url,
       ]);
     res.status(200).json({
