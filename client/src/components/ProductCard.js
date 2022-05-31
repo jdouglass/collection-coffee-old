@@ -50,7 +50,8 @@ const ProductCard = () => {
                 <Card shadow="sm" p="md">
                     <Card.Section>
                         <Anchor href={product_url} target="_blank" rel="noreferrer">
-                            <Image src={image_url} height={200} alt="Coffee beans" />
+                            {brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans" /> : null }
+                            {brand === 'Monogram' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans" /> : null }
                         </Anchor>
                     </Card.Section>
                     <div style={{height: 150}}>
