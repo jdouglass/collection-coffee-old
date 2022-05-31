@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Card, Image, Text, Badge, Anchor, Group } from '@mantine/core';
+import { Card, Image, Text, Badge, Anchor, Group} from '@mantine/core';
 import { CoffeeProductContext } from '../ProductContext';
 
 const ProductCard = () => {
