@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCard from '../components/ProductCard'
-import { SimpleGrid, Grid } from '@mantine/core'
+import { SimpleGrid } from '@mantine/core'
 
 const Products = () => {
     return (
