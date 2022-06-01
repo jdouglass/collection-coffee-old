@@ -5,7 +5,7 @@ import { CoffeeProductContext } from '../../ProductContext';
 const ProcessFilter = () => {
   const { setMerchantFilter } = useContext(CoffeeProductContext);
 
-  const merchantList = ['Subtext', 'Monogram'];
+  const merchantList = ['Monogram', 'Pirates of Coffee','Subtext'];
 
   return (
     <CheckboxGroup
