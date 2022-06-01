@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Card, Image, Text, Badge, Anchor, Group} from '@mantine/core';
+import { Card, Image, Text, Badge, Anchor, Group, BackgroundImage, Box} from '@mantine/core';
 import { CoffeeProductContext } from '../ProductContext';
 
 const ProductCard = () => {
@@ -50,21 +50,18 @@ const ProductCard = () => {
                 <Card shadow="sm" p="md">
                     <Card.Section>
                         <Anchor href={product_url} target="_blank" rel="noreferrer">
-                            {brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans" /> : null }
-                            {brand === 'Monogram' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans" /> : null }
+                            { brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
+                            { brand === 'Monogram' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
                         </Anchor>
                     </Card.Section>
                     <div style={{height: 150}}>
                         <Anchor variant="text" href={product_url} target="_blank" rel="noreferrer">
                             <Group position="apart">
                                 <Text pt="xs" size="sm">{brand}</Text>
-                                <Text pt="xs" size="xs" style={{ lineHeight: 1.5 }}>${price} for {weight}g</Text>
+                                { sold_out ? <Badge mt={9} color='red' radius='md' variant='filled' size='xs'>Sold Out</Badge> : <Text pt='xs' size='xs' style={{ lineHeight: 1.5 }}>${price} for {weight}g</Text> }
                             </Group>
                             <Text style={{ lineHeight: 1 }} weight={500}>{title}</Text>
                         </Anchor>
-                        {/* <Badge color="pink" variant="light">
-                                    On Sale
-                                </Badge> */}
                         <Text size="sm" style={{ lineHeight: 2 }}>{country}</Text>
                         <Text size="sm" style={{ lineHeight: 1, marginBottom: '0.25em'}}>{process}</Text>
                         <Text size="sm" style={{ lineHeight: 1.5 }}>{varietyOutput}</Text>
