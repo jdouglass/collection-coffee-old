@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Card, Image, Text, Badge, Anchor, Group, BackgroundImage, Box} from '@mantine/core';
+import { Card, Image, Text, Badge, Anchor, Group} from '@mantine/core';
 import { CoffeeProductContext } from '../ProductContext';
 
 const ProductCard = () => {
@@ -43,7 +43,7 @@ const ProductCard = () => {
     let filtered = filteredProducts.filter(item => filterPrice(item) && filterProcessCategory(item) && filterVariety(item) && filterCountry(item) && filterMerchant(item));
 
     const renderList = filtered.map((product) => {
-        const { id, brand, title, price, weight, process, variety, country, image_url, product_url, sold_out, date_added } = product;
+        const { id, brand, title, price, weight, process, variety, country, image_url, product_url, sold_out } = product;
         const varietyOutput = variety.join(", ");
         return (
             <div style={{ width: 275, height: 375, margin: 'auto' }} key={id}>
