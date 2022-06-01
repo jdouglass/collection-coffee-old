@@ -51,7 +51,7 @@ const ProductCard = () => {
                     <Card.Section>
                         <Anchor href={product_url} target="_blank" rel="noreferrer">
                             { brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
-                            { brand === 'Monogram' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
+                            { brand === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
                         </Anchor>
                     </Card.Section>
                     <div style={{height: 150}}>
