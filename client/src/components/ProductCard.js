@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Card, Image, Text, Badge, Anchor, Group} from '@mantine/core';
+import { Card, Image, Text, Badge, Anchor, Group, BackgroundImage} from '@mantine/core';
 import { CoffeeProductContext } from '../ProductContext';
 
 const ProductCard = () => {
@@ -48,12 +48,13 @@ const ProductCard = () => {
         return (
             <div style={{ width: 275, height: 375, margin: 'auto' }} key={id}>
                 <Card shadow="sm" p="md">
-                    <Card.Section>
-                        <Anchor href={product_url} target="_blank" rel="noreferrer">
-                            { brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
-                            { brand === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
-                        </Anchor>
-                    </Card.Section>
+                        <Card.Section>
+                            <Anchor href={product_url} target="_blank" rel="noreferrer">
+                                { brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
+                                { brand === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
+                                { product_url.includes('revolver') ? <Image src={image_url} width={265} fit="contain" alt="Coffee beans" sx={(theme) => ({backgroundColor: theme.colors.dark[8]})}></Image> : null }
+                            </Anchor>
+                        </Card.Section>
                     <div style={{height: 150}}>
                         <Anchor variant="text" href={product_url} target="_blank" rel="noreferrer">
                             <Group position="apart">
