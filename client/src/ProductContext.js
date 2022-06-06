@@ -18,7 +18,7 @@ function Provider({ children }) {
     processCategoryFilter: state.processCategoryFilter,
     varietyFilter: state.varietyFilter,
     countryFilter: state.countryFilter,
-    merchantFilter: state.merchantFilter,
+    vendorFilter: state.vendorFilter,
     setIsLoading: value => {
       dispatch({ type: actions.SET_IS_LOADING, value });
     },
@@ -43,8 +43,8 @@ function Provider({ children }) {
     setCountryFilter: value => {
       dispatch({ type: actions.SET_COUNTRY_FILTER, value });
     },
-    setMerchantFilter: value => {
-      dispatch({ type: actions.SET_MERCHANT_FILTER, value });
+    setVendorFilter: value => {
+      dispatch({ type: actions.SET_VENDOR_FILTER, value });
     },
     reset: () => {
       dispatch({ type: actions.RESET });

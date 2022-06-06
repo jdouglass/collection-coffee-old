@@ -8,5 +8,5 @@ export const initialState = {
   processCategoryFilter: [],
   varietyFilter: [],
   countryFilter: [],
-  merchantFilter: []
+  vendorFilter: []
 };

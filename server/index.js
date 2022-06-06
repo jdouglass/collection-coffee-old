@@ -85,7 +85,7 @@ app.get('/products/continent', async (req, res) => {
 // create a product
 app.post('/products', async (req, res) => {
   try {
-    const results = await db.query('insert into products (brand, title, price, weight, process, process_category, variety, country, continent, product_url, image_url, sold_out, date_added) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) returning *',
+    const results = await db.query('insert into products (brand, title, price, weight, process, process_category, variety, country, continent, product_url, image_url, sold_out, date_added, vendor) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) returning *',
       [
         req.body.brand,
         req.body.title,
@@ -99,7 +99,8 @@ app.post('/products', async (req, res) => {
         req.body.product_url,
         req.body.image_url,
         req.body.sold_out,
-        req.body.date_added
+        req.body.date_added,
+        req.body.vendor
       ]);
     res.status(200).json({
       data: {
@@ -115,13 +116,21 @@ app.post('/products', async (req, res) => {
 // update product
 app.put('/products/item', async (req, res) => {
   try {
-    const result = await db.query('update products set price = $1, weight = $2, sold_out = $3, image_url = $4 where product_url = $5 returning *',
+    const result = await db.query('update products set brand = $1, title = $2, price = $3, weight = $4, process = $5, process_category = $6, variety = $7, country = $8, continent = $9, image_url = $10, sold_out = $11, vendor = $12 where product_url = $13 returning *',
       [
+        req.body.brand,
+        req.body.title,
         req.body.price,
         req.body.weight,
-        req.body.sold_out,
+        req.body.process,
+        req.body.process_category,
+        req.body.variety,
+        req.body.country,
+        req.body.continent,
         req.body.image_url,
-        req.body.product_url,
+        req.body.sold_out,
+        req.body.vendor,
+        req.body.product_url
       ]);
     res.status(200).json({
       data: {

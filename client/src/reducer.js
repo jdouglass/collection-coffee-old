@@ -19,8 +19,8 @@ export default function reducer(state, action) {
       return { ...state, varietyFilter: action.value };
     case actions.SET_COUNTRY_FILTER:
       return { ...state, countryFilter: action.value };
-    case actions.SET_MERCHANT_FILTER:
-      return { ...state, merchantFilter: action.value };
+    case actions.SET_VENDOR_FILTER:
+      return { ...state, vendorFilter: action.value };
     case actions.RESET:
       return { ...state, ...initialState };
     default:
