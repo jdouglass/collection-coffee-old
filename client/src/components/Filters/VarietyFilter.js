@@ -3,7 +3,7 @@ import { Checkbox, CheckboxGroup, Space } from '@mantine/core';
 import { CoffeeProductContext } from '../../ProductContext';
 
 const VarietyFilter = () => {
-  const { products, setVarietyFilter, varietyFilter } = useContext(CoffeeProductContext);
+  const { products, setVarietyFilter } = useContext(CoffeeProductContext);
   let varietyList = products.map((item) => item.variety);
   varietyList = varietyList.flat();
   varietyList = [...new Set(varietyList)];
