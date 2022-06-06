@@ -4,7 +4,7 @@ import Sort from './Sort';
 import VarietyFilter from './VarietyFilter';
 import PriceFilter from './PriceFilter';
 import CountryFilter from './CountryFilter';
-import MerchantFilter from './MerchantFilter';
+import VendorFilter from './VendorFilter';
 
 const Filters = () => {
     return (
@@ -14,7 +14,7 @@ const Filters = () => {
             <ProcessCategoryFilter />
             <VarietyFilter />
             <CountryFilter />
-            <MerchantFilter />
+            <VendorFilter />
         </div>
     );
 };

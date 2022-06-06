@@ -3,7 +3,7 @@ import { Card, Image, Text, Badge, Anchor, Group} from '@mantine/core';
 import { CoffeeProductContext } from '../ProductContext';
 
 const ProductCard = () => {
-    const { filteredProducts, sortBy, priceRange, processCategoryFilter, varietyFilter, countryFilter, merchantFilter } = useContext(CoffeeProductContext);
+    const { filteredProducts, sortBy, priceRange, processCategoryFilter, varietyFilter, countryFilter, vendorFilter } = useContext(CoffeeProductContext);
     filteredProducts.forEach(() => {
         if (sortBy === 'newest') {
             return filteredProducts.sort((a, b) => b.date_added.localeCompare(a.date_added));
@@ -36,11 +36,11 @@ const ProductCard = () => {
         return !countryFilter.length || countryFilter.includes(item.country);
     }
 
-    function filterMerchant(item) {
-        return !merchantFilter.length || merchantFilter.includes(item.brand);
+    function filterVendor(item) {
+        return !vendorFilter.length || vendorFilter.includes(item.vendor);
     }
 
-    let filtered = filteredProducts.filter(item => filterPrice(item) && filterProcessCategory(item) && filterVariety(item) && filterCountry(item) && filterMerchant(item));
+    let filtered = filteredProducts.filter(item => filterPrice(item) && filterProcessCategory(item) && filterVariety(item) && filterCountry(item) && filterVendor(item));
 
     const renderList = filtered.map((product) => {
         const { id, brand, title, price, weight, process, variety, country, image_url, product_url, sold_out } = product;
@@ -48,12 +48,13 @@ const ProductCard = () => {
         return (
             <div style={{ width: 275, height: 375, margin: 'auto' }} key={id}>
                 <Card shadow="sm" p="md">
-                    <Card.Section>
-                        <Anchor href={product_url} target="_blank" rel="noreferrer">
-                            { brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
-                            { brand === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
-                        </Anchor>
-                    </Card.Section>
+                        <Card.Section>
+                            <Anchor href={product_url} target="_blank" rel="noreferrer">
+                                { brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
+                                { brand === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
+                                { product_url.includes('revolver') ? <Image src={image_url} height={200} fit="cover" alt="Coffee beans" sx={(theme) => ({backgroundColor: theme.colors.dark[8]})}></Image> : null }
+                            </Anchor>
+                        </Card.Section>
                     <div style={{height: 150}}>
                         <Anchor variant="text" href={product_url} target="_blank" rel="noreferrer">
                             <Group position="apart">
