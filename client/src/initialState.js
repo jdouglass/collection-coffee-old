@@ -4,7 +4,7 @@ export const initialState = {
   products: [],
   filteredProducts: [],
   priceRange: [],
-  sortBy: '',
+  sortBy: 'newest',
   processCategoryFilter: [],
   varietyFilter: [],
   countryFilter: [],

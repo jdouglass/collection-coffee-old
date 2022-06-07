@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import Home from './components/Home';
+import ProductsPage from './products/ProductsPage';
 import { actions } from './actions';
 import reducer from './reducer';
 import { initialState } from './initialState';
@@ -61,7 +61,7 @@ function Provider({ children }) {
 export default function ProductContext() {
   return (
     <Provider>
-      <Home />
+      <ProductsPage />
     </Provider>
   );
 }

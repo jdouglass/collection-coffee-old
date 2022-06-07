@@ -10,8 +10,8 @@ ReactDOM.createRoot(
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <App /> }>
-          </Route>
+          <Route path="/" element={ <App /> } />
+          <Route path="/products" element={ <App /> } />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
