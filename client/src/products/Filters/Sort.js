@@ -11,6 +11,7 @@ const Sort = () => {
             <Select
                 placeholder="Sort by"
                 onChange={(e) => setSortBy(e)}
+                defaultValue='newest'
                 data={[
                     { value: 'newest', label: 'Newest to Oldest' },
                     { value: 'oldest', label: 'Oldest to Newest' },
