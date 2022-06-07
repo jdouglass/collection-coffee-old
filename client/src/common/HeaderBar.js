@@ -104,7 +104,12 @@ function DoubleHeader() {
   return (
     <Header>
       <Container className={classes.inner}>
-        <Brand />
+        <Anchor 
+          component={ Link }
+          to="/"
+        >
+          <Brand />
+        </Anchor>
         <div className={classes.links}>
           <Group position="right">{secondaryItems}</Group>
           <Group spacing={0} position="right" className={classes.mainLinks}>
