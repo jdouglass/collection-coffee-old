@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { createStyles, Header, Container, Anchor, Group, Burger } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import Brand from './Brand';
-import { links } from './mockLinks';
+import { links } from './linksData';
 import { Link } from 'react-router-dom';
 
-const HEADER_HEIGHT = 84;
+const HEADER_HEIGHT = 89;
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -78,7 +78,8 @@ function DoubleHeader() {
 
   const mainItems = links.mainLinks.map((item, index) => (
     <Anchor
-      href={item.link}
+      component={ Link }
+      to={item.link}
       key={item.label}
       className={cx(classes.mainLink, { [classes.mainLinkActive]: index === active })}
       onClick={() => {
@@ -89,7 +90,7 @@ function DoubleHeader() {
     </Anchor>
   ));
 
-  const secondaryItems = links.userLinks.map((item) => (
+  const secondaryItems = links.secondaryLinks.map((item) => (
     <Anchor
       href={item.link}
       key={item.label}

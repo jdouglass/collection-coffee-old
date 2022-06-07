@@ -1,5 +1,5 @@
 export const links = {
-  "userLinks": [
+  "secondaryLinks": [
     {
       "link": "https://github.com/jdouglass/collection-coffee",
       "label": "View On Github"
@@ -11,7 +11,7 @@ export const links = {
   ],
   "mainLinks": [
     {
-      "link": "#",
+      "link": "/products",
       "label": "Products"
     }
   ]
