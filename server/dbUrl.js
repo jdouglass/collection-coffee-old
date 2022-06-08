@@ -1,5 +1,5 @@
 const axios = require('axios');
 
 module.exports = axios.create({
-  baseURL: 'http://localhost:5000/products'
+  baseURL: 'http://localhost:5000/api/products'
 });

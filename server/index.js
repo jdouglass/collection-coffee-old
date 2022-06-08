@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // get all products
-app.get('/products', async (req, res) => {
+app.get('/api/products', async (req, res) => {
   try {
     const results = await db.query('SELECT * FROM products;');
     res.status(200).json({
@@ -23,7 +23,7 @@ app.get('/products', async (req, res) => {
 });
 
 // get a product by product_url
-app.get('/products/item/product_url', async (req, res) => {
+app.get('/api/products/item/product_url', async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM products WHERE product_url = $1;", [req.query.product_url]);
     res.status(200).json({
@@ -35,7 +35,7 @@ app.get('/products/item/product_url', async (req, res) => {
 });
 
 // get all products by brand
-app.get('/products/item/brand', async (req, res) => {
+app.get('/api/products/item/brand', async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM products WHERE brand = $1;", [req.query.brand]);
     res.status(200).json({
@@ -47,7 +47,7 @@ app.get('/products/item/brand', async (req, res) => {
 });
 
 // get distinct varieties
-app.get('/products/variety', async (req, res) => {
+app.get('/api/products/variety', async (req, res) => {
   try {
     const result = await db.query("SELECT DISTINCT variety FROM products");
     res.status(200).json(
@@ -59,7 +59,7 @@ app.get('/products/variety', async (req, res) => {
 });
 
 // get distinct countries
-app.get('/products/country', async (req, res) => {
+app.get('/api/products/country', async (req, res) => {
   try {
     const result = await db.query("SELECT DISTINCT country FROM products");
     res.status(200).json({
@@ -71,7 +71,7 @@ app.get('/products/country', async (req, res) => {
 });
 
 // get distinct continents
-app.get('/products/continent', async (req, res) => {
+app.get('/api/products/continent', async (req, res) => {
   try {
     const result = await db.query("SELECT DISTINCT continent FROM products");
     res.status(200).json({
@@ -83,7 +83,7 @@ app.get('/products/continent', async (req, res) => {
 });
 
 // create a product
-app.post('/products', async (req, res) => {
+app.post('/api/products', async (req, res) => {
   try {
     const results = await db.query('insert into products (brand, title, price, weight, process, process_category, variety, country, continent, product_url, image_url, sold_out, date_added, vendor) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) returning *',
       [
@@ -114,7 +114,7 @@ app.post('/products', async (req, res) => {
 
 
 // update product
-app.put('/products/item', async (req, res) => {
+app.put('/api/products/item', async (req, res) => {
   try {
     const result = await db.query('update products set brand = $1, title = $2, price = $3, weight = $4, process = $5, process_category = $6, variety = $7, country = $8, continent = $9, image_url = $10, sold_out = $11, vendor = $12 where product_url = $13 returning *',
       [
@@ -143,7 +143,7 @@ app.put('/products/item', async (req, res) => {
 });
 
 // delete product by product_url
-app.delete('/products/item', async (req, res) => {
+app.delete('/api/products/item', async (req, res) => {
   try {
     await db.query('DELETE FROM products WHERE product_url = $1', [req.query.product_url]);
     res.status(200).json();
