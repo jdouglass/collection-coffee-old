@@ -19,7 +19,7 @@ const Sort = () => {
                     { value: 'descending', label: 'Price Descending' },
                 ]}
             />
-            <Space h="md" />
+            <Space h="xs" />
         </div>
     );
 };

@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/jdouglass/collection-coffee/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/Collection-Icon_3.png" alt="Logo" width="80" height="80">
   </a>
 
   <h2 align="center">Collection Coffee</h2>
@@ -86,16 +86,19 @@ Even if you aren't into specialty coffee or even coffee in general, this project
   - [x] Pirates of Coffee
   - [x] Subtext
   - [x] Monogram
-  - [ ] Revolver
+  - [x] Revolver
+  - [ ] Eight Ounce
+  - [ ] Hatch Crafted
   - [ ] Rogue Wave
   - [ ] David Kim
   - [ ] Nemesis
   - [ ] Timbertrain
+- [x] Add header bar
+- [x] Change filters styling
+- [x] Add favicon
 - [ ] Add Changelog
 - [ ] Add Contact Us page
-- [ ] Add header bar
 - [ ] Add About page
-- [ ] Add favicon
 - [ ] Add some more styling, and colour theme
 - [ ] Figure out how to do a CI/CD pipeline
 - [ ] Improve on the security
