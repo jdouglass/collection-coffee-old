@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Checkbox, CheckboxGroup, Space, Group, Box, UnstyledButton, Collapse, createStyles, Button } from '@mantine/core';
+import { Checkbox, CheckboxGroup, Space, Group, Box, UnstyledButton, Collapse, createStyles } from '@mantine/core';
 import { CoffeeProductContext } from '../../ProductContext';
 
 const useStyles = createStyles((theme) => ({
