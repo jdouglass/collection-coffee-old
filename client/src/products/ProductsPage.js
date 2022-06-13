@@ -22,7 +22,7 @@ const ProductsPage = () => {
             }
         };
         fetchProducts();
-    });
+    }, []);
 
     return (
         <Container size={1920}>

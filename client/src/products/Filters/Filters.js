@@ -16,7 +16,7 @@ const Filters = () => {
             >
                 <Group>
                     <Box mr={-5}>
-                        <i class="fa-solid fa-sliders"></i>
+                        <i className="fa-solid fa-sliders"></i>
                     </Box>
                     <Box ml={0}>
                         Filters
