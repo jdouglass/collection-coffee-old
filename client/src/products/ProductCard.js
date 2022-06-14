@@ -43,16 +43,16 @@ const ProductCard = () => {
     let filtered = filteredProducts.filter(item => filterPrice(item) && filterProcessCategory(item) && filterVariety(item) && filterCountry(item) && filterVendor(item));
 
     const renderList = filtered.map((product) => {
-        const { id, brand, title, price, weight, process, variety, country, image_url, product_url, sold_out } = product;
+        const { id, brand, title, price, weight, process, variety, country, image_url, product_url, sold_out, vendor } = product;
         const varietyOutput = variety.join(", ");
         return (
             <div style={{ width: 275, height: 375, margin: 'auto' }} key={id}>
                 <Card shadow="sm" p="md">
                         <Card.Section>
                             <Anchor href={product_url} target="_blank" rel="noreferrer">
-                                { brand === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
-                                { brand === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
-                                { product_url.includes('revolver') ? <Image src={image_url} height={200} fit="cover" alt="Coffee beans" sx={(theme) => ({backgroundColor: theme.colors.dark[8]})}></Image> : null }
+                                { vendor === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
+                                { vendor === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
+                                { vendor === 'Revolver Coffee' ? <Image src={image_url} height={200} fit="cover" alt="Coffee beans" sx={(theme) => ({backgroundColor: theme.colors.dark[8]})}></Image> : null }
                             </Anchor>
                         </Card.Section>
                     <div style={{height: 150}}>
