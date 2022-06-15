@@ -46,6 +46,18 @@ app.get('/api/products/item/brand', async (req, res) => {
   }
 });
 
+// get all products by vendor
+app.get('/api/products/item/vendor', async (req, res) => {
+  try {
+    const result = await db.query("SELECT * FROM products WHERE vendor = $1;", [req.query.vendor]);
+    res.status(200).json({
+      data: result.rows
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // get distinct varieties
 app.get('/api/products/variety', async (req, res) => {
   try {
