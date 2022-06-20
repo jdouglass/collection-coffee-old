@@ -26,9 +26,9 @@ jobs:
         cache: 'npm'
         cache-dependency-path: server/package-lock.json
     - run: |
-          if [ -e package-lock.json ]; then
+          if [ -e server/package-lock.json ]; then
           npm install
-          elif [ -e package-lock.json ]; then
+          elif [ -e server/package-lock.json ]; then
           npm ci
           else
           npm i
@@ -43,9 +43,9 @@ jobs:
         cache: 'npm'
         cache-dependency-path: client/package-lock.json
     - run: |
-          if [ -e package-lock.json ]; then
+          if [ -e client/package-lock.json ]; then
           npm install
-          elif [ -e package-lock.json ]; then
+          elif [ -e client/package-lock.json ]; then
           npm ci
           else
           npm i
