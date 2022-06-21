@@ -29,16 +29,12 @@ jobs:
           if [ -e server/package-lock.json ]; then
           cd server
           npm install
-          elif [ -e server/package-lock.json ]; then
-          cd server
-          npm ci
           else
           cd server
           npm i
           fi
     - run: |
           cd server
-          npm run build --if-present
     
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -53,12 +49,9 @@ jobs:
           if [ -e client/package-lock.json ]; then
           cd client
           npm install
-          elif [ -e client/package-lock.json ]; then
-          cd client
-          npm ci
           else
           cd client
-          npm i
+          npm install
           fi
     - run: |
           cd client
