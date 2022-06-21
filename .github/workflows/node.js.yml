@@ -33,8 +33,6 @@ jobs:
           cd server
           npm i
           fi
-    - run: |
-          cd server
     
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -53,7 +51,5 @@ jobs:
           cd client
           npm install
           fi
-    - run: |
-          cd client
           npm run build --if-present
           npm run build
