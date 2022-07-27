@@ -53,6 +53,7 @@ const ProductCard = () => {
                                 { vendor === 'Subtext' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
                                 { vendor === 'Monogram' || brand === 'Pirates of Coffee' ? <Image src={image_url} fit="contain" height={200} alt="Coffee beans"></Image> : null }
                                 { vendor === 'Revolver Coffee' ? <Image src={image_url} height={200} fit="cover" alt="Coffee beans" sx={(theme) => ({backgroundColor: theme.colors.dark[8]})}></Image> : null }
+                                { vendor === 'Rogue Wave' ? <Image src={image_url} height={200} alt="Coffee beans"></Image> : null }
                             </Anchor>
                         </Card.Section>
                     <div style={{height: 150}}>
